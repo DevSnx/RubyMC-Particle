@@ -1,0 +1,4 @@
+name: Particle
+version: '${project.version}'
+main: de.devsnx.rubymc.particle.Particle
+api-version: 1.19
