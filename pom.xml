@@ -30,34 +30,35 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-shade-plugin</artifactId>
-                <version>3.2.4</version>
+                <version>3.2.3</version>
                 <executions>
                     <execution>
                         <phase>package</phase>
                         <goals>
                             <goal>shade</goal>
                         </goals>
-                        <configuration>
-                            <createDependencyReducedPom>false</createDependencyReducedPom>
 
+                        <configuration>
+                            <!-- replace shaded version with main artifact -->
+                            <shadedArtifactAttached>false</shadedArtifactAttached>
+
+                            <!-- relocate API classes to avoid same-classpath-conflicts -->
+                            <!-- with other plugins using this core API -->
                             <relocations>
                                 <relocation>
                                     <pattern>com.github.fierioziy.particlenativeapi</pattern>
-                                    <shadedPattern>de.devsnx.paritcleapi</shadedPattern>
+                                    <shadedPattern>de.devsnx.rubymc.particleapi</shadedPattern>
                                 </relocation>
                             </relocations>
-
                         </configuration>
                     </execution>
                 </executions>
             </plugin>
+
+            <!--  other plugins ... -->
         </plugins>
-        <resources>
-            <resource>
-                <directory>src/main/resources</directory>
-                <filtering>true</filtering>
-            </resource>
-        </resources>
+
+        <!-- other build config ... -->
     </build>
 
     <repositories>
@@ -72,6 +73,12 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>com.github.fierioziy.particlenativeapi</groupId>
+            <artifactId>ParticleNativeAPI-plugin</artifactId>
+            <version>4.0.0</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>com.github.fierioziy.particlenativeapi</groupId>
             <artifactId>ParticleNativeAPI-core</artifactId>
