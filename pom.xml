@@ -39,6 +39,14 @@
                         </goals>
                         <configuration>
                             <createDependencyReducedPom>false</createDependencyReducedPom>
+
+                            <relocations>
+                                <relocation>
+                                    <pattern>com.github.fierioziy.particlenativeapi</pattern>
+                                    <shadedPattern>de.devsnx.paritcleapi</shadedPattern>
+                                </relocation>
+                            </relocations>
+
                         </configuration>
                     </execution>
                 </executions>
@@ -64,6 +72,12 @@
     </repositories>
 
     <dependencies>
+        <dependency>
+            <groupId>com.github.fierioziy.particlenativeapi</groupId>
+            <artifactId>ParticleNativeAPI-core</artifactId>
+            <version>4.0.0</version>
+            <scope>compile</scope>
+        </dependency>
         <dependency>
             <groupId>io.papermc.paper</groupId>
             <artifactId>paper-api</artifactId>
