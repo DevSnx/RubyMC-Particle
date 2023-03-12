@@ -1,7 +1,6 @@
 package de.devsnx.rubymc.particle.commands;
 
 import de.devsnx.rubymc.particle.utils.Utils;
-import org.bukkit.ChatColor;
 import org.bukkit.Location;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
@@ -13,7 +12,6 @@ import org.bukkit.entity.Player;
  * @since 23.02.2023
  */
 public class CommandTest implements CommandExecutor {
-
 
     @Override
     public boolean onCommand( CommandSender sender,  Command command,  String label,  String[] args) {

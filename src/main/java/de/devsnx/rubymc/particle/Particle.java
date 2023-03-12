@@ -4,9 +4,7 @@ import com.github.fierioziy.particlenativeapi.api.ParticleNativeAPI;
 import com.github.fierioziy.particlenativeapi.core.ParticleNativeCore;
 import com.github.fierioziy.particlenativeapi.plugin.ParticleNativePlugin;
 import de.devsnx.rubymc.particle.commands.CommandTest;
-import org.bukkit.plugin.Plugin;
 import org.bukkit.plugin.java.JavaPlugin;
-
 import java.util.logging.Level;
 
 public final class Particle extends JavaPlugin {
